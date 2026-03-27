@@ -4,7 +4,6 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import javax.swing.*;
-import javax.swing.border.Border;
 import javax.swing.border.TitledBorder;
 import java.awt.*;
 
