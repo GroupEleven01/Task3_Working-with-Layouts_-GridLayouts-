@@ -25,6 +25,7 @@ class JPanelsTest {
          TitledBorder B1 = (TitledBorder) Pn1.getBorder();
 
          assertNotNull(Pn1);
+         assertNotNull(B1);
          assertTrue(Pn1.isBackgroundSet());
          assertEquals(Color.magenta, Pn1.getBackground());
          assertInstanceOf(TitledBorder.class, Pn1.getBorder());
@@ -40,10 +41,11 @@ class JPanelsTest {
         TitledBorder B2 = (TitledBorder) Pn2.getBorder();
 
         assertNotNull(Pn2);
+        assertNotNull(B2);
         assertTrue(Pn2.isBackgroundSet());
         assertEquals(Color.gray, Pn2.getBackground());
 
-        assertTrue(Pn2.getBorder() instanceof TitledBorder);
+        assertInstanceOf(TitledBorder.class, Pn2.getBorder());
         assertSame("JPanel_2", B2.getTitle());
 
         assertSame(Pn2, JPanels.JPanel2);
@@ -55,11 +57,11 @@ class JPanelsTest {
         TitledBorder B3 = (TitledBorder) Pn3.getBorder();
 
         assertNotNull(Pn3);
-        assertNull(B3);
+        assertNotNull(B3);
         assertTrue(Pn3.isBackgroundSet());
         assertEquals(Color.pink, Pn3.getBackground());
 
-        assertTrue(Pn3.getBorder() instanceof TitledBorder);
+        assertInstanceOf(TitledBorder.class, Pn3.getBorder());
         assertSame("JPanel_3", B3.getTitle());
 
         assertSame(Pn3, JPanels.JPanel3);
