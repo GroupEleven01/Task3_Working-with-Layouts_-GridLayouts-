@@ -4,6 +4,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import javax.swing.*;
+import javax.swing.border.Border;
 import javax.swing.border.TitledBorder;
 import java.awt.*;
 
@@ -34,6 +35,15 @@ class JPanelsTest {
 
     @Test
     void createJPanel_2() {
+        JPanels Panels = new JPanels();
+        JPanel Pn2 = Panels.CreateJPanel_2();
+        TitledBorder B2 = (TitledBorder) Pn2.getBorder();
+
+        assertNotNull(Pn2);
+        assertTrue(Pn2.isBackgroundSet());
+        assertEquals(Color.gray, Pn2.getBackground());
+        assertTrue(Pn2.getBorder() instanceof TitledBorder);
+        assertSame(Pn2, Panels.CreateJPanel_2());
     }
 
     @Test
