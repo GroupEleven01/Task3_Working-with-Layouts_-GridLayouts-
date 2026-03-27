@@ -42,11 +42,26 @@ class JPanelsTest {
         assertNotNull(Pn2);
         assertTrue(Pn2.isBackgroundSet());
         assertEquals(Color.gray, Pn2.getBackground());
+
         assertTrue(Pn2.getBorder() instanceof TitledBorder);
-        assertSame(Pn2, Panels.CreateJPanel_2());
+        assertSame("JPanel_2", B2.getTitle());
+
+        assertSame(Pn2, JPanels.JPanel2);
     }
 
     @Test
     void createJPanel_3() {
+        JPanel Pn3 = JPanels.CreateJPanel_3();
+        TitledBorder B3 = (TitledBorder) Pn3.getBorder();
+
+        assertNotNull(Pn3);
+        assertNull(B3);
+        assertTrue(Pn3.isBackgroundSet());
+        assertEquals(Color.pink, Pn3.getBackground());
+
+        assertTrue(Pn3.getBorder() instanceof TitledBorder);
+        assertSame("JPanel_3", B3.getTitle());
+
+        assertSame(Pn3, JPanels.JPanel3);
     }
 }
