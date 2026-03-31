@@ -47,4 +47,15 @@ class Working_with_GridLayoutTest {
 
     }
 
+    @Test
+    void JFrameComponentProperties() {
+        Component components [] = GridFrame.getContentPane().getComponents();
+        assertEquals(3, components.length, "The number of components must be 3");
+
+        for (Component comp: components) {
+            assertTrue(comp instanceof JPanel);
+        }
+    }
+
+
 }
