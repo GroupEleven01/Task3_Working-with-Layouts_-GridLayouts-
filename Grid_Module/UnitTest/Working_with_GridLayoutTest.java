@@ -13,6 +13,7 @@ class Working_with_GridLayoutTest {
 
     Working_with_GridLayout DesktopLayout;
     JFrame GridFrame;
+    Component components [];
 
     @BeforeEach
     void setUp() {
@@ -49,12 +50,40 @@ class Working_with_GridLayoutTest {
 
     @Test
     void JFrameComponentProperties() {
-        Component components [] = GridFrame.getContentPane().getComponents();
+        components = GridFrame.getContentPane().getComponents();
         assertEquals(3, components.length, "The number of components must be 3");
 
         for (Component comp: components) {
             assertTrue(comp instanceof JPanel);
         }
+    }
+
+    @Test
+    void ComponentProperties() {
+        components = GridFrame.getContentPane().getComponents();
+        JPanel p1 = new JPanel();
+        p1 = (JPanel) components[0];
+        JPanel p2 = new JPanel();
+        p2 = (JPanel) components[1];
+        JPanel p3 = new JPanel();
+        p3 = (JPanel) components[2];
+
+        assertEquals(p1, GridFrame.getContentPane().getComponent(0));
+        assertEquals(p2, GridFrame.getContentPane().getComponent(1));
+        assertEquals(p3, GridFrame.getContentPane().getComponent(02));
+
+        assertTrue(p1.isBackgroundSet());
+        assertTrue(p2.isBackgroundSet());
+        assertTrue(p3.isBackgroundSet());
+
+        assertTrue(p1.isLightweight());
+        assertTrue(p2.isLightweight());
+        assertTrue(p3.isLightweight());
+
+        assertEquals(Color.magenta, p1.getBackground());
+        assertEquals(Color.gray, p2.getBackground());
+        assertEquals(Color.pink, p3.getBackground());
+
     }
 
 
