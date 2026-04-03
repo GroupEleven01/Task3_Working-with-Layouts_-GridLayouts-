@@ -17,7 +17,7 @@ public class JPanels {
         return JPanel1;
     }
 
-    public JPanel CreateJPanel_2(){
+    public static JPanel CreateJPanel_2(){
         JPanel2 = new JPanel();
         JPanel2.setBackground(Color.gray);
         Border Jpanel2Border = BorderFactory.createTitledBorder("JPanel_2");

@@ -11,7 +11,7 @@ public class Working_with_GridLayout {
 
     }
 
-    public  JFrame CreateGridJFrame(){
+    public static JFrame CreateGridJFrame(){
 
         GridJFrame = new JFrame("working with Grid layout");
         JPanels jps = new JPanels();
