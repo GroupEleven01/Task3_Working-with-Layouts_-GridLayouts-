@@ -40,7 +40,7 @@ class Working_with_GridLayoutTest {
     @Test
     void SetLayoutProperties() {
         LayoutManager layout = GridFrame.getContentPane().getLayout();
-        assertTrue(layout instanceof GridLayout);
+        assertInstanceOf(GridLayout.class, layout);
 
         GridLayout grid = ((GridLayout) layout);
         assertEquals(1, grid.getRows());
@@ -54,7 +54,7 @@ class Working_with_GridLayoutTest {
         assertEquals(3, components.length, "The number of components must be 3");
 
         for (Component comp: components) {
-            assertTrue(comp instanceof JPanel);
+            assertInstanceOf(JPanel.class, comp);
         }
     }
 
@@ -70,7 +70,7 @@ class Working_with_GridLayoutTest {
 
         assertEquals(p1, GridFrame.getContentPane().getComponent(0));
         assertEquals(p2, GridFrame.getContentPane().getComponent(1));
-        assertEquals(p3, GridFrame.getContentPane().getComponent(02));
+        assertEquals(p3, GridFrame.getContentPane().getComponent(2));
 
         assertTrue(p1.isBackgroundSet());
         assertTrue(p2.isBackgroundSet());
