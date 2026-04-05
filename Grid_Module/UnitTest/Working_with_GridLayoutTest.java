@@ -13,7 +13,7 @@ class Working_with_GridLayoutTest {
 
     Working_with_GridLayout DesktopLayout;
     JFrame GridFrame;
-    Component components [];
+    Component[] components;
 
     @BeforeEach
     void setUp() {
