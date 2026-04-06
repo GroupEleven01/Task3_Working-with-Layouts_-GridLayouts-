@@ -8,7 +8,7 @@ public class JPanels {
 
     static JPanel JPanel1, JPanel2, JPanel3;
 
-    public static JPanel  CreateJPanel_1(){
+    public static JPanel CreateJPanel_1(){
         JPanel1 = new JPanel();
         JPanel1.setBackground(Color.magenta);
         Border Jpanel1Border = BorderFactory.createTitledBorder("JPanel_1");
@@ -17,7 +17,7 @@ public class JPanels {
         return JPanel1;
     }
 
-    public static JPanel CreateJPanel_2(){
+    public JPanel CreateJPanel_2(){
         JPanel2 = new JPanel();
         JPanel2.setBackground(Color.gray);
         Border Jpanel2Border = BorderFactory.createTitledBorder("JPanel_2");
