@@ -3,6 +3,7 @@ package GridPackage;
 import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.Test;
 import javax.swing.*;
+import javax.swing.border.TitledBorder;
 import java.awt.*;
 
 class JPanelsTest {
@@ -12,15 +13,17 @@ class JPanelsTest {
         JPanel panel = JPanels.CreateJPanel_1();
         assertNotNull(panel, "Jpanel_1");
         assertEquals(Color.magenta, panel.getBackground());
-        assertTrue(panel.getBorder() instanceof javax.swing.border.TitledBorder);
+        assertInstanceOf(TitledBorder.class, panel.getBorder());
     }
 
     @Test
     void createJPanel_2() {
-        JPanel panel = JPanels.CreateJPanel_2();
-        assertNotNull(panel, "Jpanel_2");
-        assertEquals(Color.gray, panel.getBackground());
-        assertTrue(panel.getBorder() instanceof javax.swing.border.TitledBorder);
+        JPanels panel2 = new JPanels();
+        JPanel Pn = panel2.CreateJPanel_2();
+//        JPanel panel = JPanels.CreateJPanel_2();
+        assertNotNull(Pn, "Jpanel_2");
+        assertEquals(Color.gray, Pn.getBackground());
+        assertInstanceOf(TitledBorder.class, Pn.getBorder());
     }
 
     @Test

@@ -1,38 +1,43 @@
-import static org.junit.jupiter.api.Assertions.*;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+
 import javax.swing.*;
+
 import java.awt.*;
 
-public class Working_with_GridLayout {
+import static org.junit.jupiter.api.Assertions.*;
 
-    JFrame GridJFrame;
+class Working_with_GridLayoutTest {
+    Working_with_GridLayout GridExample;
+    JFrame frame1;
+
+    @BeforeEach
+    void setUp() {
+        GridExample = new Working_with_GridLayout();
+        frame1 = GridExample.GridJFrame;
+    }
 
     @Test
-    public static void CreateGridJFrame() {
-        // Call the method
-        JFrame frame = Working_with_GridLayout.CreateGridJFrame();
+    void createGridJFrame() {
+        frame1 = GridExample.GridJFrame;
+        LayoutManager Layout = frame1.getContentPane().getLayout();
+        GridLayout grid = ((GridLayout) Layout);
+        assertEquals(1, grid.getRows());
+        assertEquals(3, grid.getColumns());
+        frame1.setExtendedState((JFrame.MAXIMIZED_BOTH));
+        assertEquals(3,frame1.getContentPane().getComponentCount());
 
-        // Check that frame is not null
-        assertNotNull(frame, "Frame should not be null");
 
-        // Check title
-        assertEquals("working with Grid layout", frame.getTitle(), "Frame title should match");
+        JPanel Jpanel_1 = (JPanel) frame1.getContentPane().getComponent(0);
+        assertEquals(Color.magenta, Jpanel_1.getBackground());
 
-        // Check layout type
-        assertTrue(frame.getLayout() instanceof GridLayout, "Layout should be GridLayout");
-        GridLayout layout = (GridLayout) frame.getLayout();
-        assertEquals(1, layout.getRows(), "GridLayout should have 1 row");
-        assertEquals(3, layout.getColumns(), "GridLayout should have 3 columns");
+        JPanel Jpanel_2 = (JPanel) frame1.getContentPane().getComponent(1);
+        assertEquals(Color.gray, Jpanel_2.getBackground());
 
-        // Check extended state
-        assertEquals(JFrame.MAXIMIZED_BOTH, frame.getExtendedState(), "Frame should be maximized");
+        JPanel Jpanel_3 = (JPanel) frame1.getContentPane().getComponent(2);
+        assertEquals(Color.pink, Jpanel_3.getBackground());
 
-        // Check number of components
-        assertEquals(3, frame.getContentPane().getComponentCount(), "Frame should contain 3 panels");
 
-        // Check that components are JPanels
-        for (Component comp : frame.getContentPane().getComponents()) {
-            assertTrue(comp instanceof JPanel, "Each component should be a JPanel");
-        }
+
     }
 }
